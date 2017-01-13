@@ -30,7 +30,7 @@ function logFeed(logList) {
           var msgName = log[index]._t.toUpperCase().replace('MSG_','');
           if (msgName === 'HEARTBEAT' && !armed) {
             if (log[index].base_mode & 128) {
-              console.log('*********Armed on log index', index);
+              console.log('*********Armed on time', (new Date(log[index].LoggingTime) - new Date(log[0].LoggingTime))/1000,'s');
               armed = true;
               timediff = new Date() - new Date(log[index].LoggingTime);
               break;
@@ -77,7 +77,7 @@ function logFeed(logList) {
       offset = offset || 0;
       var log = JSON.parse(fs.readFileSync(logfile).toString());
       var mission = JSON.parse(fs.readFileSync(logfile.replace('.json','_mission.json')).toString());
-      console.log('Log file has ' + (new Date(log[log.length-1].LoggingTime) - new Date(log[0].LoggingTime))/1000 + ' seconds of log');
+      console.log('Log file ' + logfile + ' has ' + (new Date(log[log.length-1].LoggingTime) - new Date(log[0].LoggingTime))/1000 + ' seconds of log');
       return new Promise(
         function(resolve, reject) {
           var timediff = new Date() - new Date(log[0].LoggingTime);
@@ -107,5 +107,6 @@ if (process.argv.length >= 3) {
   var logList = process.argv.slice(2);
   logFeed(logList);
 } else {
-  console.log('Usage: ./log_feed.js [file1] [file2]')
+  console.log('Usage: ./log_feed.js [file1] [file2]');
+  socket.close();
 }
