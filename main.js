@@ -65,7 +65,7 @@ function logFeed(logList) {
           mav.createMessage(msgName, log[index], function(msg) {
             socket.emit('mavlink', {buffer: msg.buffer});
           });
-          //console.log('[' + (new Date(log[index].LoggingTime) - new Date(log[0].LoggingTime))/1000 + ']', msgName);
+          console.log('[' + (new Date(log[index].LoggingTime) - new Date(log[0].LoggingTime))/1000 + ']', msgName);
         }
 
         index++;
@@ -99,8 +99,15 @@ function logFeed(logList) {
         else if (i < logList.length) play(i+1, repeat);
       });
     }
-    play(0, false);
+    play(0, loop);
   });
+}
+
+var loop = false;
+
+if (process.argv[2] === '-l') {
+  loop = true;
+  process.argv.splice(2,1);
 }
 
 if (process.argv.length >= 3) {
