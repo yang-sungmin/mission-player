@@ -1,4 +1,5 @@
 var moment = require('moment');
+var fs = require('fs');
 
 /** Extend Number object with method to convert numeric degrees to radians */
 if (Number.prototype.toRadians === undefined) {
@@ -78,11 +79,11 @@ function destination (from, d, brng) {
 }
 
 var Point = function (x, y, z, heading, velocity) {
-  this.x = x;
-  this.y = y;
-  this.z = z;
-  this.heading = heading;
-  this.velocity = velocity;
+  this.x = x || 0;
+  this.y = y || 0;
+  this.z = z || 0;
+  this.heading = heading || 0;
+  this.velocity = velocity || 0;
 };
 
 var PositionLog = function (point, offset) {
@@ -91,20 +92,101 @@ var PositionLog = function (point, offset) {
   this.offset = offset;
 };
 
+PositionLog.prototype.toMavMessages = function(start) {
+  try {
+    new Date(start).toISOString();
+    new Date(Number(new Date(start)) + this.offset).toISOString();
+  } catch (err) {
+    throw err;
+  }
+  var logs = [];
+  logs.push({
+    _t: 'Msg_attitude',
+    time_boot_ms: this.offset,
+    roll: 0,
+    pitch: 0,
+    yaw: (this.heading+180).toRadians(),
+    rollspeed: 0,
+    pitchspeed: 0,
+    yawspeed: 0,
+    LoggingTime: new Date(Number(new Date(start)) + this.offset).toISOString()
+  });
+  logs.push({
+    _t: 'Msg_global_position_int',
+    time_boot_ms: this.offset,
+    lat: Math.floor(this.x*1e7),
+    lon: Math.floor(this.y*1e7),
+    alt: Math.floor(this.z*1e3),
+    relative_alt: Math.floor(this.z*1e3),
+    vx: Math.floor(this.velocity * 100),
+    vy: 0,
+    vz: 0,
+    hdg: Math.floor((this.heading%360 + 540) % 360 * 100),
+    LoggingTime: new Date(Number(new Date(start)) + this.offset).toISOString()
+  });
+  logs.push({
+    _t: "Msg_mount_status",
+    target_system: 0,
+    target_component: 0,
+    pointing_a: 0,
+    pointing_b: 0,
+    pointing_c: Math.floor((this.heading+180)*100),
+    LoggingTime: new Date(Number(new Date(start)) + this.offset).toISOString()
+  });
+  logs.push({
+    _t: "Msg_gps_raw_int",
+    time_usec: Number(new Date(start)) + this.offset,
+    fix_type: 5,
+    lat: Math.floor(this.x*1e7),
+    lon: Math.floor(this.y*1e7),
+    alt: Math.floor(this.z*1e3),
+    eph: 9999,
+    epv: 65535,
+    vel: Math.floor(this.velocity * 100),
+    cog: Math.floor((this.heading%360 + 540) % 360 * 100),
+    satellites_visible: 12,
+    LoggingTime: new Date(Number(new Date(start)) + this.offset).toISOString()
+  });
+  logs.push({
+    _t: "Msg_gps2_raw",
+    time_usec: Number(new Date(start)) + this.offset,
+    fix_type: 5,
+    lat: Math.floor(this.x*1e7),
+    lon: Math.floor(this.y*1e7),
+    alt: Math.floor(this.z*1e3),
+    eph: 9999,
+    epv: 65535,
+    vel: Math.floor(this.velocity * 100),
+    cog: Math.floor((this.heading%360 + 540) % 360 * 100),
+    satellites_visible: 12,
+    dgps_numch: 8,
+    dgps_age: 0,
+    LoggingTime: new Date(Number(new Date(start)) + this.offset).toISOString()
+  });
+  return logs;
+};
+
 var ItemReachedLog = function (count, offset) {
   this.type = 'ItemReached';
   this.count = count;
   this.offset = offset;
 };
 
+ItemReachedLog.prototype.toMavMessages = function(start, offset) {
+  return [{
+    _t: 'Msg_mission_item_reached',
+    seq: this.count,
+    LoggingTime: new Date(Number(new Date(start)) + this.offset).toISOString()
+  }];
+}
 
 function updatePosition (from, to, velocity, interval) {
-  var position;
+  var position = destination(from, velocity * interval, bearing(from, to));
   if (distance(from, to) > velocity * interval) {
-    position = destination(from, velocity * interval, bearing(from, to));
     position.velocity = velocity;  
   } else {
-    position = to;
+    position.x = to.x;
+    position.y = to.y;
     to.velocity = distance(from, to) / interval;
   }
 
@@ -118,11 +200,13 @@ function updatePosition (from, to, velocity, interval) {
     position.velocity = Math.sqrt(Math.pow(position.velocity,2) + Math.pow(from.z-to.z,2));
   }
 
-  //limit angular velocity to 180 deg/s
-  if (Math.abs(from.heading - position.heading) > 180 * interval) {
-    var diff = (position.heading - from.heading) % 360;
-    if (diff > 180) position.heading = from.heading - 180 * interval;
-    else position.heading = from.heading + 180 * interval;
+  //limit angular velocity to 90 deg/s
+  if (Math.abs(from.heading - position.heading) > 90 * interval) {
+    var diff = (((position.heading - from.heading) % 360) + 360) % 360;
+    if (diff < 180) position.heading = from.heading - 90 * interval;
+    else position.heading = from.heading + 90 * interval;
+  } else {
+    position.heading = bearing(from, to);
   }
   position.heading %= 360;
   if (position.heading > 180) position.heading -= 360;
@@ -130,18 +214,74 @@ function updatePosition (from, to, velocity, interval) {
   return position;
 }
 
-function toMavlink(log) {
 
+function toMavlink(log, start, missionInfo) {
+  var exportLog = [];
+  for (var i = 0; i < log.length; i++) {
+    var newLog = log[i].toMavMessages(start);
+    for (var j in newLog) exportLog.push(newLog[j]);
+  }
+  start = Number(new Date(start));
+  var end = start + log[log.length-1].offset;
+  exportLog.push(missionInfo);
+  exportLog.push({
+    _t: 'Msg_sys_status',
+    onboard_control_sensors_present: 0,
+    onboard_control_sensors_enabled: 0,
+    onboard_control_sensors_health: 0,
+    load: 800,
+    voltage_battery: 24700,
+    current_battery: 0,
+    battery_remaining: 78,
+    drop_rate_comm: 0,
+    errors_comm: 0,
+    errors_count1: 0,
+    errors_count2: 0,
+    errors_count3: 0,
+    errors_count4: 0,
+    LoggingTime: new Date(start).toISOString()
+  });
+  for (i = start; i < end + 1000; i+= 1000) {
+    exportLog.push({
+      _t: "Msg_heartbeat",
+      type: 14,
+      autopilot: 3,
+      base_mode: 209,
+      custom_mode: 0,
+      system_status: 3,
+      mavlink_version: 3,
+      LoggingTime: new Date(i).toISOString()
+    });
+    exportLog.push({
+      _t: 'Msg_sys_status',
+      onboard_control_sensors_present: 0,
+      onboard_control_sensors_enabled: 0,
+      onboard_control_sensors_health: 0,
+      load: 800,
+      voltage_battery: 24700,
+      current_battery: 0,
+      battery_remaining: 78,
+      drop_rate_comm: 0,
+      errors_comm: 0,
+      errors_count1: 0,
+      errors_count2: 0,
+      errors_count3: 0,
+      errors_count4: 0,
+      LoggingTime: new Date(i).toISOString()
+    });
+  }
+  return exportLog.sort(function comp(a,b) {
+    return (new Date(a.LoggingTime)) - (new Date(b.LoggingTime));
+  });
 }
 
 //interval in ms
-function logFromMission (mission, home, startTime, interval, initVelocity) {
+function logFromMission (mission, missionInfo, home, startTime, interval, initVelocity) {
   var position = home;
   var timeStep = 0;
   var logs = [];
   logs.push(new PositionLog(position, 0));
   for (var i = 0 ; i < mission.length; i++) {
-    console.log(mission[i].command);
     if (mission[i].command !== 16) {
       logs.push(new ItemReachedLog(i, timeStep * interval));
       continue;
@@ -159,8 +299,23 @@ function logFromMission (mission, home, startTime, interval, initVelocity) {
     }
     logs.push(new ItemReachedLog(i, timeStep * interval));
   }
-  return logs;
+  return toMavlink(logs, startTime, missionInfo);
 }
+
+if (require.main === module) {
+  if (process.argv.length >= 7) {
+    var argv = process.argv;
+    var mission = JSON.parse(fs.readFileSync(argv[2]).toString());
+
+    var home = new Point(Number(argv[4]), Number(argv[5]), Number(argv[6]));
+    var log = logFromMission (mission.missions[argv[3]], mission.info[argv[3]], home,
+      mission.missions[argv[3]][0].LoggingTime, 50, 5);
+    console.log(JSON.stringify(log, null, 2));
+  } else {
+    console.log('Usage: node mission_simulator.js [filename] [index] [lat] [lon] [alt]');
+  }
+}
+
 
 module.exports = {
   logFromMission: logFromMission

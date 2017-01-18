@@ -62,10 +62,10 @@ function logFeed(logList) {
         }
 
         if (msgName !== 'ANALYSISMODEL') {
+          console.log('[' + (new Date(log[index].LoggingTime) - new Date(log[0].LoggingTime))/1000 + ']', msgName);
           mav.createMessage(msgName, log[index], function(msg) {
             socket.emit('mavlink', {buffer: msg.buffer});
           });
-          console.log('[' + (new Date(log[index].LoggingTime) - new Date(log[0].LoggingTime))/1000 + ']', msgName);
         }
 
         index++;
