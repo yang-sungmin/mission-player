@@ -191,10 +191,10 @@ function updatePosition (from, to, velocity, interval) {
   }
 
   // limit vertical velocity to 1m/s
-  if (Math.abs(from.z - to.z) > interval) {
-    if (from.z < to.z) position.z += interval;
-    else position.z -= interval;
-    position.velocity = Math.sqrt(Math.pow(position.velocity,2) + interval * interval);
+  if (Math.abs(from.z - to.z) > interval*velocity) {
+    if (from.z < to.z) position.z += interval*velocity;
+    else position.z -= interval * velocity;
+    position.velocity = Math.sqrt(Math.pow(position.velocity,2) + interval * interval * velocity * velocity);
   } else {
     position.z = to.z;
     position.velocity = Math.sqrt(Math.pow(position.velocity,2) + Math.pow(from.z-to.z,2));
@@ -309,7 +309,7 @@ if (require.main === module) {
 
     var home = new Point(Number(argv[4]), Number(argv[5]), Number(argv[6]));
     var log = logFromMission (mission.missions[argv[3]], mission.info[argv[3]], home,
-      mission.missions[argv[3]][0].LoggingTime, 50, 5);
+      mission.missions[argv[3]][0].LoggingTime, 50, 3);
     console.log(JSON.stringify(log, null, 2));
   } else {
     console.log('Usage: node mission_simulator.js [filename] [index] [lat] [lon] [alt]');

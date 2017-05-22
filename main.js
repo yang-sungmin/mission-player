@@ -4,7 +4,7 @@ var fs = require('fs');
 var mavlink = require('./mavlink');
 var WaypointProtocolInterface = require('./test/WaypointProtocolInterface');
 
-var socket = io('http://aws.nearthlab.com:5050');
+var socket = io('http://localhost:5050');
 
 function logFeed(logList) {
   var mav = new mavlink(1,1);

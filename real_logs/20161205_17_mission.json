@@ -1,0 +1,837 @@
+{
+  "missions": [
+    [
+      {
+        "_id": {
+          "$oid": "5845404714cf710200e4289d"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 0,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.32237243652344,
+        "y": 126.79814910888672,
+        "z": 25.18000030517578,
+        "LoggingTime": "2016-12-05T10:24:07.748Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404714cf710200e428b4"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 1,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 30,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:07.789Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404714cf710200e428ba"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 2,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 45,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:07.883Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404714cf710200e428c8"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 3,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 180,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:07.926Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e428d3"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 4,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 3,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.32263946533203,
+        "y": 126.79824829101562,
+        "z": 8.479999542236328,
+        "LoggingTime": "2016-12-05T10:24:08.010Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e428e2"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 5,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:08.155Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e428ed"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 6,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 45,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:08.234Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e42900"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 7,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 180,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:08.359Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e4290c"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 8,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 2,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.32258224487305,
+        "y": 126.79845428466797,
+        "z": 8.479999542236328,
+        "LoggingTime": "2016-12-05T10:24:08.408Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e4291b"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 9,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:08.542Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e42926"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 10,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 45,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:08.591Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e4292c"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 11,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 180,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:08.746Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e42940"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 12,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 3,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.32252502441406,
+        "y": 126.79866027832031,
+        "z": 8.479999542236328,
+        "LoggingTime": "2016-12-05T10:24:08.828Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404814cf710200e4294f"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 13,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:08.927Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e4295a"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 14,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 90,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:09.096Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e4296a"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 15,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 270,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:09.175Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e4297a"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 16,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 3,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.32244873046875,
+        "y": 126.79866027832031,
+        "z": 12,
+        "LoggingTime": "2016-12-05T10:24:09.281Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e42989"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 17,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:09.356Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e42994"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 18,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 90,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:09.428Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e429a3"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 19,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 270,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:09.537Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e429ae"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 20,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 2,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.322505950927734,
+        "y": 126.79845428466797,
+        "z": 12,
+        "LoggingTime": "2016-12-05T10:24:09.605Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e429bd"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 21,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:09.725Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e429c8"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 22,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 90,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:09.806Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404914cf710200e429d7"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 23,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 270,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:09.950Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e429e2"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 24,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 3,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.32256317138672,
+        "y": 126.79824829101562,
+        "z": 12,
+        "LoggingTime": "2016-12-05T10:24:10.013Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e429f1"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 25,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.106Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e429fc"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 26,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 45,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.194Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a07"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 27,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.276Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a14"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 28,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 3,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.322486877441406,
+        "y": 126.79824829101562,
+        "z": 8.479999542236328,
+        "LoggingTime": "2016-12-05T10:24:10.326Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a1f"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 29,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.432Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a2e"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 30,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 45,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.526Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a39"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 31,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.587Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a3f"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 32,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 2,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.32242965698242,
+        "y": 126.79845428466797,
+        "z": 8.479999542236328,
+        "LoggingTime": "2016-12-05T10:24:10.670Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a4b"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 33,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.727Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a56"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 34,
+        "frame": 0,
+        "command": 205,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 45,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.791Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a59"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 35,
+        "frame": 0,
+        "command": 115,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:10.874Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404a14cf710200e42a68"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 36,
+        "frame": 0,
+        "command": 16,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 3,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 37.32237243652344,
+        "y": 126.79866027832031,
+        "z": 8.479999542236328,
+        "LoggingTime": "2016-12-05T10:24:10.964Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404b14cf710200e42a73"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 37,
+        "frame": 0,
+        "command": 203,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 1,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:11.093Z"
+      },
+      {
+        "_id": {
+          "$oid": "5845404b14cf710200e42a83"
+        },
+        "_t": "Msg_mission_item",
+        "target_system": 0,
+        "target_component": 0,
+        "seq": 38,
+        "frame": 0,
+        "command": 20,
+        "current": 0,
+        "autocontinue": 1,
+        "param1": 0,
+        "param2": 0,
+        "param3": 0,
+        "param4": 0,
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "LoggingTime": "2016-12-05T10:24:11.224Z"
+      }
+    ]
+  ],
+  "info": [
+    {
+      "_id": {
+        "$oid": "5845404714cf710200e4286d"
+      },
+      "_t": "Msg_mission_count",
+      "target_system": 0,
+      "target_component": 0,
+      "count": 39,
+      "LoggingTime": "2016-12-05T10:24:07.561Z"
+    }
+  ]
+}
